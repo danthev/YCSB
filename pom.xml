@@ -126,7 +126,7 @@ LICENSE file.
     <foundationdb.version>5.2.5</foundationdb.version>
     <geode.version>1.2.0</geode.version>
     <googlebigtable.version>1.4.0</googlebigtable.version>
-    <googlefirestore.version>1.29.0</googlefirestore.version>
+    <googlefirestore.version>3.5.0</googlefirestore.version>
     <griddb.version>4.0.0</griddb.version>
     <hbase1.version>1.4.12</hbase1.version>
     <hbase2.version>2.2.3</hbase2.version>

@@ -16,7 +16,7 @@
  */
 package site.ycsb.db.firestore;
 
-import com.google.auth.oauth2.GoogleCredentials;
+// import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
@@ -30,9 +30,9 @@ import site.ycsb.DB;
 import site.ycsb.DBException;
 import site.ycsb.Status;
 import site.ycsb.StringByteIterator;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+// import java.io.FileInputStream;
+// import java.io.FileNotFoundException;
+// import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -67,19 +67,21 @@ public class GoogleFirestoreClient extends DB {
     if (projectId == null) {
       throw new DBException("Must provide project ID.");
     }
-    String privateKeyFile = properties.getProperty(GoogleFirestoreProperties.PRIVKEYFILE);
-    if (privateKeyFile == null) {
-      throw new DBException("Must provide full path to private key file.");
-    }
-    try {
-      GoogleCredentials gCreds = GoogleCredentials.fromStream(new FileInputStream(privateKeyFile));
-      FirestoreOptions fsOptions = FirestoreOptions.newBuilder().setCredentials(gCreds).build();
-      fsDb = fsOptions.getService();
-    } catch (FileNotFoundException e) {
-      throw new DBException("Can't find key.", e);
-    } catch (IOException e) {
-      throw new DBException("No file to import.", e);
-    }
+    // String privateKeyFile = properties.getProperty(GoogleFirestoreProperties.PRIVKEYFILE);
+    // if (privateKeyFile == null) {
+    //   throw new DBException("Must provide full path to private key file.");
+    // }
+    // try {
+    //   GoogleCredentials gCreds = GoogleCredentials.fromStream(new FileInputStream(privateKeyFile));
+    FirestoreOptions fsOptions = FirestoreOptions.newBuilder()
+      // .setCredentials(gCreds)
+          .build();
+    fsDb = fsOptions.getService();
+    // } catch (FileNotFoundException e) {
+    //   throw new DBException("Can't find key.", e);
+    // } catch (IOException e) {
+    //   throw new DBException("No file to import.", e);
+    // }
 
     LOGGER.info("Created Firestore client for project: " + projectId);
   }
